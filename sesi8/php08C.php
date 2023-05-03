@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PHP 12B</title>
+    <title>PHP 08B</title>
 </head>
 <body>
     <h1>Array Operators and Regular Expressions</h1>
