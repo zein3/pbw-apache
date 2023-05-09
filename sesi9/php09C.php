@@ -8,5 +8,9 @@
     echo 'Item: ', $_REQUEST['item'], '<br>';
     echo 'Address: ', $_REQUEST['address'], '<br>';
     ?>
+
+    <a href="./php09A.php">
+        <button>Back</button>
+    </a>
 </body>
 </html>
