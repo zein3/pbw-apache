@@ -1,5 +1,6 @@
 <?php
 
+session_set_cookie_params(60 * 60 * 24);
 session_start();
 function destroy_session_and_data() {
     session_unset();
