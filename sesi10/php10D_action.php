@@ -9,7 +9,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
         // berhasil login
         session_start();
         $_SESSION['username'] = $_POST['username'];
-        header("Location: php10D.php");
+        header("Location: ./php10F.php");
     } else {
         echo "username atau password salah";
     }

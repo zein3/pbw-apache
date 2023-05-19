@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $_POST['slot']
         ]);
 
-        header("Location: ./php10D.php");
+        header("Location: ./php10F.php");
     } catch (PDOException $e) {
         echo $e->getMessage();
     }

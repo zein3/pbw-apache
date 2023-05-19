@@ -8,7 +8,7 @@ if (isset($_GET['slot']) && is_numeric($_GET['slot'])) {
         $stmt = $pdo->prepare("DELETE FROM meetings WHERE slot = ?");
         $stmt->execute([$_GET['slot']]);
 
-        header("Location: ./php10D.php");
+        header("Location: ./php10F.php");
     } catch (PDOException $e) {
         echo $e->getMessage();
     }

@@ -31,7 +31,7 @@
                 <a href="#">Data Meeting</a>
             </li>
             <li>
-                <a href="./php10D_logout.php">Logout</a>
+                <a href="./php10F_logout.php">Logout</a>
             </li>
         </ul>
     </nav>

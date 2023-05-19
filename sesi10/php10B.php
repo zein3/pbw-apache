@@ -11,10 +11,10 @@ if (isset($_REQUEST['item'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form 2</title>
+    <title>PHP10 B</title>
 </head>
 <body>
-    <form action="processSession.php" method="POST">
+    <form action="./php10C.php" method="POST">
         <label>Address: </label>
         <input type="text" name="address">
         <input type="submit" value="Send">
