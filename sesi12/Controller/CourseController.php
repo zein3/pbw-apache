@@ -24,16 +24,17 @@ class CourseController extends BaseController
 
     function detailGet($pathParams, $payload)
     {
-        $courses = array(
-            (object) array(
-                "id" => 1,
-                "name" => "Pemrograman Berbasis Web"
-            ),
-            (object) array(
-                "id" => 2,
-                "name" => "Pemrograman Android"
-            )
-        );
+        $courses = $this->model->listCourses();
+        // $courses = array(
+        //     (object) array(
+        //         "id" => 1,
+        //         "name" => "Pemrograman Berbasis Web"
+        //     ),
+        //     (object) array(
+        //         "id" => 2,
+        //         "name" => "Pemrograman Android"
+        //     )
+        // );
 
         $courseId = $pathParams["id"];
         $filteredCourses = array_filter($courses, function ($c) use ($courseId) {
@@ -57,18 +58,20 @@ class CourseController extends BaseController
 
     function addPost($pathParams, $payload)
     {
-        $courses = array(
-            (object) array(
-                "id" => 1,
-                "name" => "Pemrograman Berbasis Web"
-            ),
-            (object) array(
-                "id" => 2,
-                "name" => "Pemrograman Android"
-            )
-        );
+        $this->model->addCourse($payload);
+        $courses = $this->model->listCourses();
+        // $courses = array(
+        //     (object) array(
+        //         "id" => 1,
+        //         "name" => "Pemrograman Berbasis Web"
+        //     ),
+        //     (object) array(
+        //         "id" => 2,
+        //         "name" => "Pemrograman Android"
+        //     )
+        // );
 
-        array_push($courses, $payload);
+        // array_push($courses, $payload);
 
         $this->sendOutput(
             json_encode($courses),
@@ -112,24 +115,26 @@ class CourseController extends BaseController
 
     function deleteDelete($pathParams, $payload)
     {
-        $courses = array(
-            (object) array(
-                "id" => 1,
-                "name" => "Pemrograman Berbasis Web"
-            ),
-            (object) array(
-                "id" => 2,
-                "name" => "Pemrograman Android"
-            )
-        );
+        $this->model->deleteCourse($pathParams['id']);
+        $courses = $this->model->listCourses();
+        // $courses = array(
+        //     (object) array(
+        //         "id" => 1,
+        //         "name" => "Pemrograman Berbasis Web"
+        //     ),
+        //     (object) array(
+        //         "id" => 2,
+        //         "name" => "Pemrograman Android"
+        //     )
+        // );
 
-        $courseId = $pathParams["id"];
+        // $courseId = $pathParams["id"];
 
-        foreach ($courses as $key => $course) {
-            if ($course->id == $courseId) {
-                array_splice($courses, $key, 1);
-            }
-        }
+        // foreach ($courses as $key => $course) {
+        //     if ($course->id == $courseId) {
+        //         array_splice($courses, $key, 1);
+        //     }
+        // }
 
         $this->sendOutput(
             json_encode($courses),
